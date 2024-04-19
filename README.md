@@ -5,7 +5,7 @@
 - **[Angular](https://v13.angular.io/docs)** (13.x)
 - **[fullcalendar.io](https://fullcalendar.io/)** (5.x)
 - **[Angular Material](https://v13.material.angular.io/)** (13.x)
-- **[NG bootstrap](https://ng-bootstrap.github.io/releases/12.x/#/home)** (13.x)
+- **[NG bootstrap](https://ng-bootstrap.github.io/releases/12.x/#/home)** (12.x)
 
 ## Installation
 
