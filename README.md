@@ -1,27 +1,28 @@
-# Planning
+# Test Angular Neoshore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+> Application **Planning** de Neoshore, ci-dessous des informations sur la stack avec un lien vers des docs
 
-## Development server
+- **[Angular](https://v13.angular.io/docs)** (13.x)
+- **[fullcalendar.io](https://fullcalendar.io/)** (5.x)
+- **[Angular Material](https://v13.material.angular.io/)** (13.x)
+- **[NG bootstrap](https://ng-bootstrap.github.io/releases/12.x/#/home)** (13.x)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+### Pré-requis
+- Une version de **Node LTS** *(14 recommandé)*
+- **Angular CLI** installé de manière globale : `npm install -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Clonage du repository
+- `git clone --single-branch --branch master git@github.com:AlfredNico/TestAngularNeoshore.git`
 
-## Build
+### Installation des packages
+- `npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Utilisation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Démarrer en mode développement
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Utilisez la commande `ng serve`
+- Le site est désormais lancé en local à l'adresse http://localhost:4200
