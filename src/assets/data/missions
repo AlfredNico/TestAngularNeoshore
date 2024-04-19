@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "title": "Conception de l'interface utilisateur",
+      "description": "Créer des wireframes et des maquettes pour concevoir l'interface utilisateur de l'application.",
+      "color": "#FFC107",
+      "date": "2024-04-14"
+    },
+    {
+      "id": 2,
+      "title": "Développement des fonctionnalités principales",
+      "description": "Implémenter les fonctionnalités principales de l'application, telles que l'authentification et la gestion des données.",
+      "color": "#2196F3",
+      "date": "2024-04-01"
+    },
+    {
+      "id": 3,
+      "title": "Tests unitaires et d'intégration",
+      "description": "Effectuer des tests pour vérifier le bon fonctionnement des différentes parties de l'application.",
+      "color": "#FF5722",
+      "date": "2024-04-25"
+    },
+    {
+      "id": 4,
+      "title": "Optimisation des performances",
+      "description": "Optimiser les performances de l'application en identifiant et en corrigeant les goulets d'étranglement.",
+      "color": "#9C27B0",
+      "date": "2024-04-15"
+    },
+    {
+      "id": 5,
+      "title": "Tests de validation",
+      "description": "Effectuer des tests de validation pour vérifier que l'application répond aux spécifications et aux attentes des utilisateurs.",
+      "color": "#795548",
+      "date": "2024-04-30"
+    },
+    {
+      "id": 6,
+      "title": "Déploiement sur le serveur de production",
+      "description": "Déployer l'application sur un serveur de production pour la rendre accessible aux utilisateurs finaux.",
+      "color": "#2196F3",
+      "date": "2024-04-09"
+    }
+  ]

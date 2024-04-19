@@ -1,0 +1,103 @@
+<mat-toolbar class="w-100 mb-3 p-3" style="height: 7rem;">
+  <div>
+    <div>Notes:</div>
+    <ul  class="list-group">
+      <p class="text-muted">Si vous voullez ajouter une mission, veuillez cliquer sur la date que vous voullez</p>
+    </ul>
+  </div>
+  <span style="flex: 1 1 auto;"></span>
+  <!-- <button>CLICK ME</button> -->
+</mat-toolbar>
+
+<div class="container">
+  <div class="row w-100">
+    <div class="col-4">
+     <div class="card p-3">
+        <h2 class="card-header">
+          Liste des équipes
+        </h2>
+        <div class="card-body">
+          <mat-accordion>
+            <mat-expansion-panel *ngFor="let team of teamsList" (opened)="true" (closed)="false">
+              <mat-expansion-panel-header [style.background-color]="team.color">
+                <mat-panel-title> {{ team.name }}  </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-list role="list">
+                <mat-list-item role="listitem" *ngFor="let emp of team.employees">
+                  <img [src]="'assets/images/' + emp.avatar" alt="" width="50" height="50">
+                  <span class="mx-4"> {{ emp.name }} </span>
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+     </div>
+    </div>
+    <div class="col-8">
+      <div class="card p-4">
+        <full-calendar
+          #fullcalendar
+          deepChangeDetection="true"
+          editable="true"
+          [options]="calendarOptions">
+        </full-calendar>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+	<div class="modal-header">
+		<h2 class="modal-title" id="modal-basic-title">Add mission</h2>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+    <form [formGroup]="missionForm">
+      <div class="form-group w-100 my-3">
+        <input type="text" formControlName="title" class="form-control" placeholder="Title" required [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}">
+        <div *ngIf="title.invalid && (title.dirty || title.touched)">
+          <div *ngIf="title.errors?.['required']" class="text-danger">
+            Titre requis.
+          </div>
+        </div>
+      </div>
+      <div class="form-group w-100 my-3">
+        <input type="text" formControlName="description" placeholder="Description" required  class="form-control" [ngClass]="{'is-invalid': description.invalid && (description.dirty || description.touched)}">
+        <div *ngIf="description.invalid && (description.dirty || description.touched)">
+          <div *ngIf="description.errors?.['required']" class="text-danger">
+            Description requis.
+          </div>
+        </div>
+      </div>
+      <div class="form-group w-100 my-3">
+        <select formControlName="color" required  class="form-control" [ngClass]="{'is-invalid': color.invalid && (color.dirty || color.touched)}">
+          <option value="" selected readonly disabled>Selection équipe attribué</option>
+          <option value="#FF5722">Équipe 1 (Orange)</option>
+          <option value="#2196F3">Équipe 2 (Bleu)</option>
+          <option value="#FFC107">Équipe 3 (Jaune)</option>
+          <option value="#795548">Équipe 4 (Marron)</option>
+          <option value="#9C27B0">Équipe 5 (Violet)</option>
+        </select>
+        <div *ngIf="color.invalid && (color.dirty || color.touched)">
+          <div *ngIf="color.errors?.['required']" class="text-danger">
+            Couleur requis.
+          </div>
+        </div>
+      </div>
+      <div class="form-group w-100 my-3">
+        <input type="date" formControlName="date" required  class="form-control" [ngClass]="{'is-invalid': date.invalid && (date.dirty || date.touched)}">
+        <div *ngIf="date.invalid && (date.dirty || date.touched)">
+          <div *ngIf="date.errors?.['required']" class="text-danger">
+            Date requis.
+          </div>
+        </div>
+      </div>
+    </form>
+	</div>
+	<div class="modal-footer">
+    <button mat-raised-button class="mx-2" color="warn" (click)="removeMission()" [disabled]="id.value == '' || id.value == null">Supprimer</button>
+    <button mat-raised-button class="mx-2" color="primary" (click)="addMission()" [disabled]="missionForm.invalid">Enregistrer</button>
+	</div>
+</ng-template>
